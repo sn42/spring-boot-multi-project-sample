@@ -1,0 +1,14 @@
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.14'
+}
+
+dependencies {
+    implementation project(':library')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+lombok {
+    version = '1.18.4'
+    sha256 = ''
+}

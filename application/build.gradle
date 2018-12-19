@@ -1,7 +1,3 @@
-plugins {
-    id 'io.franzbecker.gradle-lombok' version '1.14'
-}
-
 configurations {
     developmentOnly
     runtimeClasspath {
@@ -15,9 +11,4 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     
     developmentOnly('org.springframework.boot:spring-boot-devtools')
-}
-
-lombok {
-    version = '1.18.4'
-    sha256 = ''
 }

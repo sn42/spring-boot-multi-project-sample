@@ -1,3 +1,11 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+/* 
+ * Create custom configuration "developmentOnly" to prevent devtools from beeing transitively applied to other modules that use this project.
+ * For more information: https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html
+ */
 configurations {
     developmentOnly
     runtimeClasspath {

@@ -1,3 +1,9 @@
+/*
+ * Manage spring boot plugin's version in the root project, but don't apply the plugin.
+ * Subprojects can use "apply plugin: 'org.springframework.boot'".
+ *
+ * For more information: https://docs.gradle.org/5.0/userguide/plugins.html#sec:subprojects_plugins_dsl
+ */
 plugins {
     id 'org.springframework.boot' version '2.1.1.RELEASE' apply false
 }
@@ -5,27 +11,8 @@ plugins {
 allprojects {
     group = 'com.github.sn42.sample'
     version = '1.0'
-}
-
-subprojects {
-    apply plugin: 'java'
     
     repositories {
         jcenter();
-    }
-}
-
-project(':application') {
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
-}
-
-project(':library') {
-    apply plugin: 'io.spring.dependency-management'
-
-    dependencyManagement {
-        imports { 
-            mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
-        }
     }
 }

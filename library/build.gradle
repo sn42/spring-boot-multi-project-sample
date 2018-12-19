@@ -1,4 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+/*
+ * Use Spring Boot's dependency management in isolation.
+ * For more information: https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#managing-dependencies-using-in-isolation
+ */
+dependencyManagement {
+    imports { 
+        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    }
 }
